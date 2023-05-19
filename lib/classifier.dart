@@ -177,7 +177,7 @@ class Classifier {
             locations[i], image.height, image.width);
         print("Output locations : $transformedRect");
         recognitions.add(
-          Recognition(i, label, score),
+          Recognition(i, label, score, transformedRect),
         );
       }
     }

@@ -1,3 +1,5 @@
+import 'package:flutter/rendering.dart';
+
 /// Represents the recognition output from the model
 class Recognition {
   /// Index of the result
@@ -9,18 +11,23 @@ class Recognition {
   /// Confidence [0.0, 1.0]
   double _score;
 
+  Rect _location;
+
   /// Location of bounding box rect
   ///
   /// The rectangle corresponds to the raw input image
   /// passed for inference
 
-  Recognition(this._id, this._label, this._score);
+  Recognition(this._id, this._label, this._score, this._location);
 
   int get id => _id;
 
   String get label => _label;
 
   double get score => _score;
+
+  Rect get renderLocation => _location;
+
 
   // List<int> get location => _location;
 
